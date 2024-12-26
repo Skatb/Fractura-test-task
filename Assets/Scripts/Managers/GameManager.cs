@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -5,14 +6,15 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     private CameraController mainCamera;
-    public bool isGameStarted;
+    [HideInInspector] public bool isGameStarted;
 
+    public GameUI gameUI;
+    [SerializeField] float gameDuration;
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -34,6 +36,10 @@ public class GameManager : MonoBehaviour
         {
             isGameStarted = true;
             mainCamera.isTransitioning = true;
+
+            gameUI.timeRemaining = gameDuration;
+
+            gameUI.StartGame();
             Debug.Log("Game Started!");
         }
     }

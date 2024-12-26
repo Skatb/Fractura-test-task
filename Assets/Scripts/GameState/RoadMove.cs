@@ -8,7 +8,7 @@ public class RoadMove : MonoBehaviour
         if (GameManager.Instance.isGameStarted)
         {
             transform.position += new Vector3(0, 0, -roadMovingSpeed) * Time.deltaTime;
-        }  
+        }
     }
 
     private void OnTriggerEnter(Collider other)

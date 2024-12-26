@@ -3,7 +3,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Vector3 startPosition;
-    [SerializeField] private float speed = 4f;
     [SerializeField] private float swayAmount = 2f;
     [SerializeField] private float swaySpeed = 2f;
     [SerializeField] private float swayStartTime = 2f;
@@ -38,8 +37,6 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMovement()
     {
-        transform.Translate(-Vector3.forward * speed * Time.deltaTime);
-
         if (elapsedTime >= swayStartTime)
         {
             movementOffset = Mathf.Sin((elapsedTime - swayStartTime) * swaySpeed) * swayAmount;

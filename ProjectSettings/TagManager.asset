@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RoadTrigger
   - Destroy
+  - Enemy
   layers:
   - Default
   - TransparentFX

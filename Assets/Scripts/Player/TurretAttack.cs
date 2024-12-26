@@ -20,7 +20,7 @@ public class TurretAttack : MonoBehaviour
     {
         fireTimer -= Time.deltaTime;
 
-        if (fireTimer <= 0f)
+        if (fireTimer <= 0f && GameManager.Instance.isGameStarted)
         {
             FireProjectile();
             fireTimer = fireRate;
