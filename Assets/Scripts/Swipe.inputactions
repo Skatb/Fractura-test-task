@@ -1,14 +1,14 @@
 {
-    "name": "InputSystem",
+    "name": "Swipe",
     "maps": [
         {
-            "name": "swipe",
-            "id": "7ec82958-8a4e-4381-80a7-f3be6d6cfdb0",
+            "name": "Swipe",
+            "id": "5a2b3af4-874a-4675-a2af-4ff86aac18e3",
             "actions": [
                 {
                     "name": "Touch",
                     "type": "Button",
-                    "id": "4ab02b1f-4e51-4219-8d9a-78657778dcf1",
+                    "id": "6746b19c-9fd1-4a77-8b05-373a883b56ed",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -17,7 +17,7 @@
                 {
                     "name": "TouchPosition",
                     "type": "Value",
-                    "id": "6e419b5c-0ea8-46f9-b790-75b2a6efc04f",
+                    "id": "938cc963-2c3c-45a6-80ee-810f4537bd2c",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -27,7 +27,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "b3a418eb-136b-4d36-bce4-6e1a7fb6a07c",
+                    "id": "09888033-b0ce-4101-9ce1-be16f3795b11",
                     "path": "<Touchscreen>/Press",
                     "interactions": "",
                     "processors": "",
@@ -38,7 +38,7 @@
                 },
                 {
                     "name": "",
-                    "id": "10ba787a-7797-4860-9f1f-36d1c974e543",
+                    "id": "b9d27ad5-c1d3-48d9-9348-0415f98eb41f",
                     "path": "<Touchscreen>/position",
                     "interactions": "",
                     "processors": "",

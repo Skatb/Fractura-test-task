@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     private CameraController mainCamera;
-    private bool isGameStarted;
+    public bool isGameStarted;
 
     private void Awake()
     {
