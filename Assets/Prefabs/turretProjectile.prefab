@@ -121,3 +121,5 @@ MonoBehaviour:
   damage: 5
   maxDistance: 20
   speed: 5
+  explosionEffectPrefab: {fileID: 1133464994552968876, guid: dc74022360dbb5f4da054ca66f38b4c9,
+    type: 3}

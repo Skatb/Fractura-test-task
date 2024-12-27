@@ -33,11 +33,9 @@ public class GameManager : MonoBehaviour
     {
         if (!isGameStarted)
         {
-            isGameStarted = true;
-            mainCamera.isTransitioning = true;
+            mainCamera.ChangeCameraPosition();
 
             gameUI.timeRemaining = gameDuration;
-
             gameUI.StartGame();
         }
     }

@@ -723,11 +723,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5827074903209926197, guid: 28b2d758e81eee54eb3014eb626d5092,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1154064797}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28b2d758e81eee54eb3014eb626d5092, type: 3}
 --- !u!1 &898100208
 GameObject:
@@ -956,35 +952,6 @@ MonoBehaviour:
   startCameraPosition: {fileID: 649821074}
   cameraCarPosition: {fileID: 622305333}
   cameraTransitionSpeed: 3
-  isTransitioning: 0
---- !u!1 &1154064789 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5827074903209926197, guid: 28b2d758e81eee54eb3014eb626d5092,
-    type: 3}
-  m_PrefabInstance: {fileID: 832444499}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1154064797
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1154064789}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2977981768884665668, guid: 7f9e82268dd78c445a43a7432f0d9389, type: 3}
 --- !u!1 &1392017348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,7 +1157,7 @@ PrefabInstance:
     - target: {fileID: 7231208344085537716, guid: 210362a29623eea48922f439532c76c5,
         type: 3}
       propertyPath: rotationSpeed
-      value: 30
+      value: 63.8
       objectReference: {fileID: 0}
     - target: {fileID: 7579879733164558663, guid: 210362a29623eea48922f439532c76c5,
         type: 3}
@@ -1268,7 +1235,7 @@ GameObject:
   - component: {fileID: 1563444976}
   - component: {fileID: 1563444975}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

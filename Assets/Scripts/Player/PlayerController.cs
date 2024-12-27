@@ -8,9 +8,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float swayStartTime = 2f;
     [SerializeField] private GameObject turretTransform;
     [SerializeField] private SwipeDetection swipeDetection;
-
-    [HideInInspector] public bool startedGame = false;
-
     private float movementOffset = 0f;
     [SerializeField] private float rotationSpeed;
     private Quaternion initialRotation;
@@ -23,7 +20,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (startedGame)
+        if (GameManager.Instance.isGameStarted)
         {
             elapsedTime += Time.deltaTime;
             HandleMovement();

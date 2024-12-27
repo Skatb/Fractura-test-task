@@ -5,6 +5,7 @@ public class ProjectileBehavior : MonoBehaviour
     [SerializeField] private int damage;
     [SerializeField] private float maxDistance;
     [SerializeField] private float speed;
+    [SerializeField] private GameObject explosionEffectPrefab;
 
     private TurretAttack turretAttack;
     private Vector3 direction;
@@ -40,8 +41,16 @@ public class ProjectileBehavior : MonoBehaviour
             {
                 enemy.OnTakeDamage(damage);
             }
-
+            SpawnHitEffect(transform.position);
             Deactivate();
+        }
+    }
+    private void SpawnHitEffect(Vector3 position)
+    {
+        if (explosionEffectPrefab != null)
+        {
+            GameObject hitEffect = Instantiate(explosionEffectPrefab, position, Quaternion.identity);
+            Destroy(hitEffect, 1f);
         }
     }
     protected void Deactivate()
