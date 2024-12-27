@@ -28,7 +28,6 @@ public class HealthController : MonoBehaviour, IDamagable, IHealth
             OnDie();
         }
     }
-
     public void OnDie()
     {
         GameManager.Instance.gameUI.TriggerDefeat();

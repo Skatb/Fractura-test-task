@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AggroTrigger : MonoBehaviour
@@ -14,7 +12,6 @@ public class AggroTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Aggro Triggered");
             aggroCollider.enabled = false;
             GetComponentInParent<Enemy>().SetAggro(other.transform);
         }

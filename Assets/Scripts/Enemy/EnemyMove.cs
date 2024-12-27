@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
@@ -23,21 +22,29 @@ public class EnemyMove : MonoBehaviour
     {
         if (enemy.isAggroed)
         {
-            Animator.SetBool("isAggro", true);
-            Vector3 direction = target.position - transform.position;
-            float distance = direction.magnitude;
-            direction.Normalize();
-            if (distance > objectDistance)
-            {
-                rb.MovePosition(transform.position + direction * speed * Time.deltaTime);
-            }
-            Quaternion lookRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * speed);
+            AggroState();
         }
         else
         {
-            Animator.SetBool("isAggro", false);
-            transform.position += new Vector3(0, 0, -speed) * Time.deltaTime;
+            IdleState();
         }
+    }
+    private void IdleState()
+    {
+        Animator.SetBool("isAggro", false);
+        transform.position += new Vector3(0, 0, -speed) * Time.deltaTime;
+    }
+    private void AggroState()
+    {
+        Animator.SetBool("isAggro", true);
+        Vector3 direction = target.position - transform.position;
+        float distance = direction.magnitude;
+        direction.Normalize();
+        if (distance > objectDistance)
+        {
+            rb.MovePosition(transform.position + direction * speed * Time.deltaTime);
+        }
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * speed);
     }
 }

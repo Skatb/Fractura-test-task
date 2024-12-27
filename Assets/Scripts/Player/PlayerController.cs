@@ -11,11 +11,7 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector] public bool startedGame = false;
 
-    private bool shouldMove = false;
     private float movementOffset = 0f;
-    private bool isSwiping = false;
-
-    private float targetYRotation = 0f;
     [SerializeField] private float rotationSpeed;
     private Quaternion initialRotation;
     private void Start()
@@ -31,7 +27,6 @@ public class PlayerController : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             HandleMovement();
-            HandleTurretRotation();
         }
     }
 
@@ -43,26 +38,16 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(startPosition.x + movementOffset, transform.position.y, transform.position.z);
         }
     }
-    private void HandleTurretRotation()
+    public void HandleTurretRotation()
     {
-        if (swipeDetection.swiping)
+        if (swipeDetection.swiping && GameManager.Instance.isGameStarted)
         {
-            float rotationDelta = 0f;
+            float rotationDelta = swipeDetection.swipeDirection ? -1f : 1f; 
+            float newZRotation = turretTransform.transform.localRotation.eulerAngles.z + rotationDelta * rotationSpeed * Time.deltaTime;
 
-            if (!swipeDetection.swipeDirection)
-            {
-                rotationDelta = 1f; // Поворот вправо
-            }
-            else if (swipeDetection.swipeDirection)
-            {
-                rotationDelta = -1f; // Поворот влево
-            }
+            newZRotation = (newZRotation > 180f) ? newZRotation - 360f : newZRotation;
 
-            targetYRotation = Mathf.Clamp(targetYRotation + rotationDelta * rotationSpeed, -30f, 30f);
+            turretTransform.transform.localRotation = Quaternion.Euler(turretTransform.transform.localEulerAngles.x, turretTransform.transform.localEulerAngles.y, -newZRotation * rotationSpeed);
         }
-
-        Quaternion targetRotation = initialRotation * Quaternion.Euler(0f, 0f, targetYRotation);
-
-        turretTransform.transform.localRotation = targetRotation;
     }
 }

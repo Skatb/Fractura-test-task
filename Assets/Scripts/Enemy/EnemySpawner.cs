@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -14,7 +13,6 @@ public class EnemySpawner : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(SpawnEnemiesRoutine());
     }
-
     private IEnumerator SpawnEnemiesRoutine()
     {
         while (true)
@@ -26,7 +24,6 @@ public class EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval);
         }
     }
-
     private void SpawnEnemies()
     {
         Vector3 spawnPosition = player.position + spawnDistance;

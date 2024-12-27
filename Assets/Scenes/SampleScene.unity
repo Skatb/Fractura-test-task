@@ -123,6 +123,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &116600306 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7231208344085537716, guid: 210362a29623eea48922f439532c76c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1494072951}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45457cbeb687ded45b2073e62e548cae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &180987230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,7 +1130,7 @@ PrefabInstance:
     - target: {fileID: 1918800083081844213, guid: 210362a29623eea48922f439532c76c5,
         type: 3}
       propertyPath: fireRate
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1918800083081844213, guid: 210362a29623eea48922f439532c76c5,
         type: 3}
@@ -1150,6 +1162,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6654557567153082081, guid: 210362a29623eea48922f439532c76c5,
+        type: 3}
+      propertyPath: minSwipeDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654557567153082081, guid: 210362a29623eea48922f439532c76c5,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 116600306}
     - target: {fileID: 7096253378099188733, guid: 210362a29623eea48922f439532c76c5,
         type: 3}
       propertyPath: m_Name
@@ -1164,6 +1186,11 @@ PrefabInstance:
         type: 3}
       propertyPath: swayAmount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7231208344085537716, guid: 210362a29623eea48922f439532c76c5,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7579879733164558663, guid: 210362a29623eea48922f439532c76c5,
         type: 3}
@@ -1261,7 +1288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGameStarted: 0
   gameUI: {fileID: 1623219838}
-  gameDuration: 33
+  gameDuration: 15
 --- !u!4 &1563444976
 Transform:
   m_ObjectHideFlags: 0
@@ -1835,7 +1862,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -51.599976, y: -138.2}
+  m_AnchoredPosition: {x: -10, y: -20.699951}
   m_SizeDelta: {x: 310.51, y: 97}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &2076680729
@@ -1947,7 +1974,7 @@ PrefabInstance:
     - target: {fileID: 5211098879336224389, guid: c96ede2b4ef75cb43b3f9064a204e1ac,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -43.19
+      value: -44.23
       objectReference: {fileID: 0}
     - target: {fileID: 5211098879336224389, guid: c96ede2b4ef75cb43b3f9064a204e1ac,
         type: 3}

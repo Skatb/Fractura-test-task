@@ -588,8 +588,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eca7730265347b449e37873f5aeec52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swipeInputActions: {fileID: -944628639613478452, guid: a0d948dfc7f432d4cb2e58aa60b569ce,
+    type: 3}
   maxSwipeTime: 0.5
-  minSwipeDistance: 1
+  minSwipeDistance: 10
   swiping: 0
   swipeAngle: 0
   swipeDirection: 0
@@ -792,7 +794,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarUI: {fileID: 4896024943003629941}
-  carCollider: {fileID: 0}
   maxHealth: 10
 --- !u!114 &4852726989869187381
 MonoBehaviour:

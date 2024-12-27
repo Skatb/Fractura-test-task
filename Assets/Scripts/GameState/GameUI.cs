@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
@@ -9,7 +8,6 @@ public class GameUI : MonoBehaviour
 
     public EndGame endGamePanel;
     public float timeRemaining;
-    private bool isGameOver = false;
     
     public IEnumerator UpdateTimerCoroutine()
     {
@@ -38,14 +36,12 @@ public class GameUI : MonoBehaviour
     }
     public void TriggerVictory()
     {
-        isGameOver = true;
         ShowUI(endGamePanel, true);
         Time.timeScale = 0; 
     }
 
     public void TriggerDefeat()
     {
-        isGameOver = true;
         ShowUI(endGamePanel, false);
         Time.timeScale = 0;
     }
@@ -71,10 +67,8 @@ public class GameUI : MonoBehaviour
             endGamePanel.endGameText.text = "You Lose!";
         }
     }
-
     private void HideUI(EndGame endGamePanel)
     {
         endGamePanel.gameObject.SetActive(false);
     }
- 
 }

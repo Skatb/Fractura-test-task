@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -40,7 +39,6 @@ public class GameManager : MonoBehaviour
             gameUI.timeRemaining = gameDuration;
 
             gameUI.StartGame();
-            Debug.Log("Game Started!");
         }
     }
 }
