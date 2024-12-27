@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour
 
     private PlayerController player;
     private Vector3 offset;
-    private bool shouldLeadForPlayer;
+    public bool shouldLeadForPlayer;
     private void Awake()
     {
         mainCamera = GetComponent<Camera>();
@@ -51,12 +51,7 @@ public class CameraController : MonoBehaviour
             mainCamera.transform.rotation = Quaternion.Slerp(mainCamera.transform.rotation, cameraCarPosition.rotation, cameraTransitionSpeed * Time.deltaTime);
             yield return null;
         }
-        yield return StartCoroutine(StartGame());
+        yield return GameManager.Instance.StartCoroutine("StartGameDelay");
     }
-    IEnumerator StartGame()
-    {
-        yield return new WaitForSeconds(1f);
-        shouldLeadForPlayer = true;
-        GameManager.Instance.isGameStarted = true;
-    }
+    
 }

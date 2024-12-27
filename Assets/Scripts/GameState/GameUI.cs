@@ -18,8 +18,9 @@ public class GameUI : MonoBehaviour
             timeRemaining--;
         }
     }
-    public void StartGame()
+    public void StartCounter(float timeRemaining)
     {
+        this.timeRemaining = timeRemaining;
         StartCoroutine(UpdateTimerCoroutine());
         gameTimer.gameObject.SetActive(true);
     }
@@ -29,7 +30,7 @@ public class GameUI : MonoBehaviour
         int seconds = Mathf.FloorToInt(timeRemaining % 60);
         gameTimer.timerText.text = $"{minutes:D2}:{seconds:D2}";
 
-        if (timeRemaining == 0)
+        if (timeRemaining <= 0)
         {
             TriggerVictory();
         }

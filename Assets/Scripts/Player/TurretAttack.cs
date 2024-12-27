@@ -17,12 +17,12 @@ public class TurretAttack : MonoBehaviour
 
     private void Update()
     {
-        fireTimer -= Time.deltaTime;
+        fireTimer -= Time.deltaTime * fireRate;
 
         if (fireTimer <= 0f && GameManager.Instance.isGameStarted)
         {
             FireProjectile();
-            fireTimer = fireRate;
+            fireTimer = 1f;
         }
     }
 

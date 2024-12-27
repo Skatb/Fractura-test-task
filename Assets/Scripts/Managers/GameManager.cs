@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public GameUI gameUI;
     [SerializeField] float gameDuration;
+
+    private bool touchToStart = false;
     private void Awake()
     {
         if (Instance == null)
@@ -24,8 +27,9 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if (!isGameStarted && (Input.touchCount > 0 || Input.GetMouseButtonDown(0)))
+        if (!isGameStarted && !touchToStart && (Input.touchCount > 0 || Input.GetMouseButtonDown(0)))
         {
+            touchToStart = true;
             StartGame();
         }
     }
@@ -34,9 +38,13 @@ public class GameManager : MonoBehaviour
         if (!isGameStarted)
         {
             mainCamera.ChangeCameraPosition();
-
-            gameUI.timeRemaining = gameDuration;
-            gameUI.StartGame();
         }
+    }
+    public IEnumerator StartGameDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        mainCamera.shouldLeadForPlayer = true;
+        isGameStarted = true;
+        gameUI.StartCounter(gameDuration);
     }
 }
