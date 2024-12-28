@@ -570,11 +570,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806d89b984db89c4785894cb631a0cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolSize: 10
-  fireRate: 2
+  poolSize: 15
+  fireRate: 3
   projectilePrefab: {fileID: 3537803829804524480, guid: 41afd3febad13e142b7de93eae0a6872,
     type: 3}
-  projectileStartPosition: {fileID: 4378638260998321395}
+  projectileStartPosition: {fileID: 2452659674622625690}
   projectilePool: {fileID: 2422007564704657868}
 --- !u!114 &6654557567153082081
 MonoBehaviour:
@@ -588,9 +588,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eca7730265347b449e37873f5aeec52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 7231208344085537716}
   swipeInputActions: {fileID: -944628639613478452, guid: a0d948dfc7f432d4cb2e58aa60b569ce,
     type: 3}
-  maxSwipeTime: 0.5
   minSwipeDistance: 10
   swiping: 0
   swipeAngle: 0
@@ -612,7 +612,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 12620aa47ccd3964bbffd7a90f411afa,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.9000001
+      value: -0.29
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 12620aa47ccd3964bbffd7a90f411afa,
         type: 3}
@@ -736,7 +736,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
@@ -774,13 +774,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPosition: {x: -0.27, y: 0.18, z: -42.4}
-  swayAmount: 2
-  swaySpeed: 2
+  swayAmount: 1
+  swaySpeed: 1
   swayStartTime: 2
   turretTransform: {fileID: 4003661449326849609}
   swipeDetection: {fileID: 6654557567153082081}
-  startedGame: 0
-  rotationSpeed: 1
+  rotationSpeed: 20
 --- !u!114 &6469627903547645211
 MonoBehaviour:
   m_ObjectHideFlags: 0
